@@ -1,57 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shailesh Mishra - Web Developer Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-        header { background: #0073e6; color: #fff; padding: 20px; text-align: center; }
-        .container { width: 80%; margin: auto; overflow: hidden; }
-        .section { padding: 20px; }
-        h2 { color: #0073e6; }
-        ul { list-style: none; padding: 0; }
-        li { background: #f4f4f4; margin: 5px 0; padding: 10px; }
-        .contact-info { background: #eee; padding: 20px; text-align: center; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shailesh Kumar Mishra — Laravel &amp; AI Automation Developer</title>
+<meta name="description" content="Laravel/PHP developer with 10+ years building CRM, ERP, and WhatsApp/AI automation systems. Live projects you can check.">
+<style>
+  :root{
+    --ink:#13202b;          /* near-black blue */
+    --ink-soft:#3a4b58;
+    --paper:#f6f4ef;        /* warm off-white */
+    --line:#d9d4c8;
+    --accent:#1f6f5c;       /* deep green — "running / live" */
+    --accent-soft:#e3efe9;
+    --amber:#b06a2c;        /* in-progress */
+    --mono:'JetBrains Mono','SF Mono',ui-monospace,Menlo,Consolas,monospace;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--sans); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+  /* ---------- header ---------- */
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  h1{font-size:clamp(32px,6vw,52px);line-height:1.05;letter-spacing:-1px;font-weight:800;margin-bottom:16px}
+  .lede{font-size:clamp(17px,2.4vw,20px);color:var(--ink-soft);max-width:620px}
+  .lede strong{color:var(--ink);font-weight:600}
+  .contact{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+  .contact a{
+    font-family:var(--mono);font-size:13px;text-decoration:none;
+    border:1px solid var(--line);padding:8px 14px;border-radius:6px;
+    background:#fff;transition:.15s;
+  }
+  .contact a:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ---------- section ---------- */
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  .sec-head{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:32px;display:flex;align-items:center;gap:12px}
+  .sec-head::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* ---------- project card ---------- */
+  .project{margin-bottom:48px}
+  .project:last-child{margin-bottom:0}
+  .p-top{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  .p-name{font-size:23px;font-weight:700;letter-spacing:-.3px}
+  .badge{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;white-space:nowrap}
+  .badge.live{background:var(--accent-soft);color:var(--accent)}
+  .badge.wip{background:#f5e9dc;color:var(--amber)}
+  .p-link{font-family:var(--mono);font-size:13px;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.15s}
+  .p-link:hover{border-bottom-color:var(--accent)}
+  .p-desc{margin:14px 0 16px;color:var(--ink-soft);max-width:680px}
+  .p-tech{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+  .p-tech span{font-family:var(--mono);font-size:12px;color:var(--ink-soft);background:#fff;border:1px solid var(--line);padding:3px 9px;border-radius:4px}
+
+  /* ---------- screenshot slot ---------- */
+  .shot{
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    background:#fff;
+  }
+  .shot img{width:100%;display:block}
+  .shot-empty{
+    aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;background:repeating-linear-gradient(45deg,#fff,#fff 12px,#faf8f3 12px,#faf8f3 24px);
+    color:#aaa;font-family:var(--mono);font-size:13px;text-align:center;padding:20px;
+  }
+  .shot-empty b{color:#888;font-size:14px}
+
+  /* ---------- small projects grid ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .mini{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}
+  .mini h3{font-size:16px;font-weight:700;margin-bottom:4px}
+  .mini .mtech{font-family:var(--mono);font-size:12px;color:#999;margin-bottom:10px}
+  .mini p{font-size:14px;color:var(--ink-soft)}
+  .mini a{font-family:var(--mono);font-size:12px;color:var(--accent);text-decoration:none}
+
+  /* ---------- skills ---------- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+  .skill-group h4{font-family:var(--mono);font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .skill-group p{font-size:15px;color:var(--ink-soft)}
+
+  /* ---------- footer ---------- */
+  footer{padding:48px 0 64px;text-align:center}
+  footer .big{font-size:24px;font-weight:700;margin-bottom:8px}
+  footer p{color:var(--ink-soft);margin-bottom:20px}
+
+  @media(max-width:560px){
+    header{padding:44px 0 32px}
+    .contact a{flex:1;text-align:center}
+  }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Shailesh Mishra</h1>
-        <p>Senior Web Developer | PHP, Laravel, WordPress, CodeIgniter, React.js</p>
-    </header>
-    <div class="container">
-        <section class="section">
-            <h2>Professional Summary</h2>
-            <p>Accomplished Web Developer with 9.5+ years of expertise in PHP, Laravel, WordPress, CodeIgniter, and React.js. Specialized in CRM development, API integration, and AI-driven solutions.</p>
-        </section>
-        <section class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li>PHP, Laravel, WordPress, CodeIgniter, React.js</li>
-                <li>HTML, CSS, JavaScript, jQuery, Bootstrap</li>
-                <li>REST APIs, WooCommerce, WebRTC, ChatGPT</li>
-                <li>MySQL, MsSQL</li>
-                <li>GIT, SVN, TFS</li>
-            </ul>
-        </section>
-        <section class="section">
-            <h2>Projects</h2>
-            <ul>
-                <li>RealAdventures.com - Laravel-based vacation rental platform</li>
-                <li>SunLeisureWorld.com - CodeIgniter-based travel booking system</li>
-                <li>CatchMyGigLive.com - Website builder using Laravel & AngularJS</li>
-                <li>Custom WordPress Development for multiple clients</li>
-            </ul>
-        </section>
-        <section class="section">
-            <h2>Education</h2>
-            <p>MCA, ADCA, BCA - Indira Gandhi National Open University (IGNOU)</p>
-        </section>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Laravel · PHP · AI Automation</div>
+    <h1>Shailesh Kumar Mishra</h1>
+    <p class="lede">I'm a developer with <strong>10+ years</strong> of experience. I build CRM and ERP systems, and lately I connect Laravel apps to <strong>WhatsApp and AI</strong> using n8n. Most of the projects below are live — you can open them and check.</p>
+    <div class="contact">
+      <a href="mailto:shailesh.me81@gmail.com">shailesh.me81@gmail.com</a>
+      <a href="https://www.linkedin.com/in/shailesh-fullstack-dev" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.upwork.com/freelancers/~01f6dea5fdc5a5808b" target="_blank" rel="noopener">Upwork</a>
+      <a href="tel:+919911127915">+91 99111 27915</a>
     </div>
-    <footer class="contact-info">
-        <p>Contact: (+91) 9911127915 | <a href="mailto:Shailesh.me81@gmail.com">Shailesh.me81@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/shailesh-mishrag">linkedin.com/in/shailesh-mishrag</a></p>
-    </footer>
+  </div>
+</header>
+
+<!-- ============ FEATURED ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">Featured Work</div>
+
+    <!-- Bauzen -->
+    <div class="project">
+      <div class="p-top">
+        <div class="p-name">WhatsApp AI Bot — Bauzen (Real Estate, Mexico)</div>
+        <span class="badge live">Live</span>
+      </div>
+      <p class="p-desc">A WhatsApp bot for a real-estate agency in Mexico. It answers property questions in Spanish and English at any hour, remembers the conversation, and shows live listings pulled from their property site. I built the whole thing and set up the server myself.</p>
+      <div class="p-tech"><span>n8n</span><span>WhatsApp Cloud API</span><span>Claude API</span><span>VPS</span><span>Docker</span><span>Traefik</span></div>
+      <div class="shot">
+        <!-- TO ADD YOUR SCREENSHOT: replace this whole .shot-empty div with:-->
+            
+        <div class="shot-empty">
+          <img src="images/bauzen-chat.png" alt="Bauzen WhatsApp bot conversation"> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Crediflex -->
+    <div class="project">
+      <div class="p-top">
+        <div class="p-name">Loan CRM — Crediflex</div>
+        <span class="badge live">Live</span>
+      </div>
+      <a class="p-link" href="https://app.crediflex.in" target="_blank" rel="noopener">app.crediflex.in →</a>
+      <p class="p-desc">A CRM for loans that tracks each lead from first contact through document checks, credit check, and approval, all the way to disbursement. Admins get a dashboard to see conversions and assign leads to agents.</p>
+      <div class="p-tech"><span>Laravel</span><span>PHP</span><span>React.js</span><span>MySQL</span></div>
+      <div class="shot">
+        <div class="shot-empty">
+		 <img src="images/crediflex.png" alt="Bauzen WhatsApp bot conversation"> 
+         
+        </div>
+      </div>
+    </div>
+
+    <!-- Eduforge -->
+    <div class="project">
+      <div class="p-top">
+        <div class="p-name">School ERP — Eduforge</div>
+        <span class="badge live">Live</span>
+      </div>
+      <a class="p-link" href="https://eduforge.in" target="_blank" rel="noopener">eduforge.in →</a>
+      <p class="p-desc">A school management system I built and run myself. It handles admissions, attendance, fees, timetable, and results, with separate logins and views for admins, teachers, and parents.</p>
+      <div class="p-tech"><span>Laravel</span><span>React.js</span><span>MySQL</span></div>
+      <div class="shot">
+        <div class="shot-empty">
+		 <img src="images/eduforge.png" alt="Bauzen WhatsApp bot conversation"> 
+         
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ MORE PROJECTS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">More Projects</div>
+    <div class="grid">
+      <div class="mini">
+        <h3>DemoMail Suite</h3>
+        <div class="mtech">PHP · Salesforce · Outlook SDK</div>
+        <p>Sends video product demos and tracks them through Salesforce.</p>
+        <a href="https://demoondemand.com" target="_blank" rel="noopener">demoondemand.com →</a>
+      </div>
+      <div class="mini">
+        <h3>Brewing Industry ERP</h3>
+        <div class="mtech">Laravel · MySQL · React.js</div>
+        <p>Inventory, billing, and reporting with separate logins for retailers, distributors, and admins. (Demo on request.)</p>
+      </div>
+      <div class="mini">
+        <h3>AI Lead Generation Tool</h3>
+        <div class="mtech">Python · Gemini · Maps/Yelp API</div>
+        <p>Pulls business listings from Google Maps and Yelp, summarizes them with Gemini, and outputs a CSV of leads.</p>
+      </div>
+      <div class="mini">
+        <h3>CatchMyGigLive</h3>
+        <div class="mtech">Laravel · WebRTC · Node.js · AngularJS</div>
+        <p>A live-streaming platform for musicians and event promoters. I worked on the real-time video streaming (WebRTC), the booking calendar, and subdomain provisioning. (Platform now inactive — the business closed.)</p>
+      </div>
+      <div class="mini">
+        <h3>RealAdventures</h3>
+        <div class="mtech">Laravel</div>
+        <p>A vacation rentals website built on Laravel.</p>
+      </div>
+      <div class="mini">
+        <h3>AI Travel Planner</h3>
+        <div class="mtech">Laravel · Neuron AI</div>
+        <p>A side project with two AI agents — one plans, one writes — working together in Laravel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORDPRESS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">WordPress &amp; WooCommerce</div>
+    <p class="p-desc" style="margin-bottom:28px">I've built 50+ WordPress and WooCommerce sites over the years. A few that are live:</p>
+    <div class="grid">
+      <div class="mini">
+        <h3>Kawaii Baby Diapers</h3>
+        <div class="mtech">WooCommerce</div>
+        <p>Online store for cloth diapers and accessories.</p>
+        <a href="https://kawaiibabydiapers.com" target="_blank" rel="noopener">kawaiibabydiapers.com →</a>
+      </div>
+      <div class="mini">
+        <h3>Kamaal Zindagi</h3>
+        <div class="mtech">WordPress</div>
+        <p>Website for video success stories.</p>
+        <a href="https://kamaalzindagi.com" target="_blank" rel="noopener">kamaalzindagi.com →</a>
+      </div>
+      <div class="mini">
+        <h3>Tidyboy</h3>
+        <div class="mtech">WooCommerce</div>
+        <p>eCommerce store (Germany).</p>
+        <a href="https://tidyboy.de" target="_blank" rel="noopener">tidyboy.de →</a>
+      </div>
+      <div class="mini">
+        <h3>Byakuya</h3>
+        <div class="mtech">WordPress · WooCommerce</div>
+        <p>Online store and brand site.</p>
+        <a href="https://byakuya.com" target="_blank" rel="noopener">byakuya.com →</a>
+      </div>
+      <div class="mini">
+        <h3>Rhema Made</h3>
+        <div class="mtech">WooCommerce</div>
+        <p>Product store.</p>
+        <a href="https://rhemamade.com" target="_blank" rel="noopener">rhemamade.com →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">What I Work With</div>
+    <div class="skills">
+      <div class="skill-group">
+        <h4>AI &amp; Automation</h4>
+        <p>n8n, WhatsApp Cloud API, Claude / OpenAI / Gemini APIs, webhooks</p>
+      </div>
+      <div class="skill-group">
+        <h4>Backend</h4>
+        <p>Laravel 11, PHP 8+, CodeIgniter, CakePHP, REST API, Python, MySQL</p>
+      </div>
+      <div class="skill-group">
+        <h4>Frontend</h4>
+        <p>React.js, Next.js, Tailwind CSS</p>
+      </div>
+      <div class="skill-group">
+        <h4>Servers</h4>
+        <p>VPS setup, Docker, Traefik, SSL, AWS EC2/S3</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="big">Looking for new work — available now</div>
+    <p>Open to Laravel/backend roles and freelance projects, remote.</p>
+    <div class="contact" style="justify-content:center">
+      <a href="mailto:shailesh.me81@gmail.com">Email me</a>
+      <a href="https://www.linkedin.com/in/shailesh-fullstack-dev" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

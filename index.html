@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Shailesh Kumar Mishra — AI Integration Engineer</title>
-<meta content="AI Integration Engineer with 10+ years of software engineering experience and 3 years of hands-on AI/GenAI integration work. n8n, LLM agents, Laravel, REST APIs, WhatsApp automation, CRM/ERP integrations." name="description"/>
+<title>Shailesh Kumar Mishra — AI Engineer &amp; Senior Laravel/PHP Developer</title>
+<meta content="AI Engineer and Senior Laravel/PHP developer with 10+ years of experience. Production WhatsApp AI agent, multi-LLM AI tutor, loan CRM and school ERP." name="description"/>
 <style>
   :root{
     --ink:#13202b;          /* near-black blue */
@@ -87,6 +87,14 @@
   .skill-group h4{font-family:var(--mono);font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
   .skill-group p{font-size:15px;color:var(--ink-soft)}
 
+  .p-list{margin:-4px 0 16px 20px;color:var(--ink-soft);max-width:680px;font-size:15px}
+  .p-list li{margin-bottom:4px}
+  a.site{font-family:var(--mono);font-size:12px;color:var(--accent);background:#fff;border:1px solid var(--line);padding:4px 10px;border-radius:4px;text-decoration:none}
+  a.site:hover{border-color:var(--accent)}
+  .agency-note{margin-top:28px;font-size:15px}
+  .agency-note a{color:var(--accent);font-weight:600;text-decoration:none}
+  .shot{margin-top:4px}
+
   /* ---------- footer ---------- */
   footer{padding:48px 0 64px;text-align:center}
   footer .big{font-size:24px;font-weight:700;margin-bottom:8px}
@@ -101,145 +109,166 @@
 <body>
 <header>
 <div class="wrap">
-<div class="eyebrow">AI Integration · LLM Agents · n8n · Laravel</div>
+<div class="eyebrow">AI Engineer · Senior Laravel/PHP Developer</div>
 <h1>Shailesh Kumar Mishra</h1>
-<p class="lede">AI Integration Engineer with <strong>10+ years</strong> of software engineering experience and <strong>3 years of hands-on AI / GenAI integration</strong>. I build production business automation by connecting LLMs, n8n workflows, REST APIs, CRM/ERP systems and existing business applications.</p>
+<p class="lede">I've been building with <strong>Laravel and PHP for 10+ years</strong>, mostly CRMs, ERPs, REST APIs and integrations. Now I build AI on top of that: AI agents that call tools, apps that use more than one LLM, and automation connected to real business software.</p>
 <div class="contact">
-<a href="mailto:shailesh.me81@gmail.com">shailesh.me81@gmail.com</a><a href="https://github.com/shailesh10981" rel="noopener" target="_blank">GitHub</a>
+<a href="mailto:shailesh.me81@gmail.com">shailesh.me81@gmail.com</a>
 <a href="https://www.linkedin.com/in/shailesh-fullstack-dev" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://github.com/shailesh10981" rel="noopener" target="_blank">GitHub</a>
 <a href="https://www.upwork.com/freelancers/~01f6dea5fdc5a5808b" rel="noopener" target="_blank">Upwork</a>
 <a href="tel:+919911127915">+91 99111 27915</a>
 </div>
 </div>
 </header>
+
 <!-- ============ FEATURED ============ -->
-<section><div class="wrap"><div class="sec-head">AI / GenAI Focus</div><div class="skills"><div class="skill-group"><h4>Production AI Integration</h4><p>3 years hands-on with LLM integrations, AI agents, n8n automation, API orchestration and business workflows.</p></div><div class="skill-group"><h4>Agentic Workflows</h4><p>Tool calling, controlled business actions, conversation memory, prompt/system design and human escalation patterns.</p></div><div class="skill-group"><h4>Working Knowledge</h4><p>RAG, embeddings, vector databases, grounded response patterns and structured LLM outputs.</p></div><div class="skill-group"><h4>Backend Foundation</h4><p>10+ years with Laravel/PHP, REST APIs, MySQL, CRM/ERP systems, Docker and cloud deployments.</p></div></div></div></section><section>
+<section>
 <div class="wrap">
 <div class="sec-head">Featured Work</div>
-<!-- Bauzen -->
+
 <div class="project">
 <div class="p-top">
-<div class="p-name">Production WhatsApp AI Agent — Bauzen MX</div>
+<div class="p-name">WhatsApp AI Agent — Bauzen MX</div>
 <span class="badge live">Live</span>
 </div>
-<p class="p-desc">An end-to-end AI-powered WhatsApp sales agent for a Mexican real-estate company. It handles Spanish/English conversations, understands customer intent, retrieves live property inventory, checks calendar availability, books appointments, and synchronizes leads with Kommo CRM. I designed the n8n workflow, AI agent/tool interactions, API integrations, deployment and troubleshooting.</p>
-<div class="p-tech"><span>n8n</span><span>Claude / OpenRouter</span><span>WhatsApp Cloud API</span><span>eBroker API</span><span>Google Calendar</span><span>Kommo CRM</span><span>Docker</span><span>Traefik</span></div>
-<div class="shot">
-<!-- TO ADD YOUR SCREENSHOT: replace this whole .shot-empty div with:-->
-<div class="shot-empty">
-<img alt="Bauzen MX WhatsApp AI agent conversation" src="images/bauzen-chat.png"/>
+<p class="p-desc">A WhatsApp sales agent for a real-estate company in Mexico. Customers message on WhatsApp, and the agent replies, finds matching properties and books a site visit. I built the n8n workflow, the agent's tools, the API integrations and the deployment.</p>
+<ul class="p-list">
+<li>The LLM decides when to call each tool: property search, availability check, booking</li>
+<li>Searches live property listings (eBroker API) and free slots in Google Calendar</li>
+<li>Finds the lead in Kommo CRM by phone number, then updates it or creates a new one</li>
+<li>Keeps replies in Spanish or English, remembers the conversation, and handles dates in Mexico's time zone</li>
+<li>Detects when a customer came from a Facebook or Instagram ad</li>
+</ul>
+<div class="p-tech"><span>n8n</span><span>Claude via OpenRouter</span><span>WhatsApp Cloud API</span><span>eBroker API</span><span>Google Calendar</span><span>Kommo CRM</span><span>Docker</span><span>Traefik</span></div>
+<div class="shot"><img alt="WhatsApp AI agent conversation" src="images/bauzen-chat.png" loading="lazy"/></div>
 </div>
+
+<div class="project">
+<div class="p-top">
+<div class="p-name">AI Tutor — built solo</div>
+<span class="badge live">Live</span>
 </div>
+<a class="p-link" href="https://tutor.eduforge.in" rel="noopener" target="_blank">tutor.eduforge.in →</a>
+<p class="p-desc">An AI tutor for CBSE Class 8–12 Maths and Science. It talks, writes notes and draws diagrams on an animated whiteboard, asks questions and answers doubts in real time. I built the whole thing myself.</p>
+<ul class="p-list">
+<li>Uses Gemini, Groq and Claude. If one fails, it switches to the next. Rate limits and daily spend caps keep it running at almost zero cost</li>
+<li>Diagrams come from my own SVG engine (about 16 physics and maths templates), not AI images, so they're always correct</li>
+<li>Numeric and maths answers are checked by a small Python/SymPy service with a PHP fallback, not by asking the AI</li>
+<li>Admin panel for content and analytics, Playwright tests on real lessons, runs on my own VPS with backups</li>
+</ul>
+<div class="p-tech"><span>PHP 8.2</span><span>MySQL</span><span>JavaScript</span><span>SVG / rough.js</span><span>Gemini</span><span>Groq</span><span>Claude</span><span>Python/SymPy</span><span>Playwright</span></div>
+<div class="shot"><img alt="AI Tutor whiteboard lesson" src="images/ai-tutor.png" loading="lazy" onerror="this.parentElement.remove()"/></div>
 </div>
-<!-- Crediflex -->
+
 <div class="project">
 <div class="p-top">
 <div class="p-name">Loan CRM — Crediflex</div>
 <span class="badge live">Live</span>
 </div>
 <a class="p-link" href="https://app.crediflex.in" rel="noopener" target="_blank">app.crediflex.in →</a>
-<p class="p-desc">A loan CRM that tracks leads from first contact through document checks, credit review, approval and disbursement. Includes conversion dashboards and agent assignment, showing my background in complex business workflows and API-driven backend systems.</p>
-<div class="p-tech"><span>Laravel</span><span>PHP</span><span>React.js</span><span>MySQL</span></div>
-<div class="shot">
-<div class="shot-empty">
-<img alt="Crediflex loan CRM dashboard" src="images/crediflex.png"/>
+<p class="p-desc">Follows each loan lead from the first enquiry to disbursement: lead capture, document checks, credit processing, approval and payout. Leads are assigned to agents, and admins see how many leads move through each stage.</p>
+<div class="p-tech"><span>Laravel</span><span>PHP</span><span>React.js</span><span>MySQL</span><span>REST API</span></div>
+<div class="shot"><img alt="Loan CRM dashboard" src="images/crediflex.png" loading="lazy"/></div>
 </div>
-</div>
-</div>
-<!-- Eduforge -->
+
 <div class="project">
 <div class="p-top">
-<div class="p-name">School ERP — Eduforge</div>
+<div class="p-name">School ERP — EduForge</div>
 <span class="badge live">Live</span>
 </div>
 <a class="p-link" href="https://eduforge.in" rel="noopener" target="_blank">eduforge.in →</a>
-<p class="p-desc">A school ERP covering admissions, attendance, fees, timetable and results with separate roles for admins, teachers and parents. Built to demonstrate end-to-end product ownership, backend architecture and business workflow design.</p>
-<div class="p-tech"><span>Laravel</span><span>React.js</span><span>MySQL</span></div>
-<div class="shot">
-<div class="shot-empty">
-<img alt="EduForge school ERP interface" src="images/eduforge.png"/>
-</div>
-</div>
+<p class="p-desc">Covers the full school cycle: admissions, attendance, fees, timetable, exams and results. Admins, teachers and parents each have their own login and see only what they need.</p>
+<div class="p-tech"><span>Laravel</span><span>React.js</span><span>MySQL</span><span>REST API</span></div>
+<div class="shot"><img alt="School ERP screen" src="images/eduforge.png" loading="lazy"/></div>
 </div>
 </div>
 </section>
+
 <!-- ============ MORE PROJECTS ============ -->
 <section>
 <div class="wrap">
-<div class="sec-head">Selected Projects</div>
+<div class="sec-head">Other Projects</div>
 <div class="grid">
+<div class="mini">
+<h3>AI Travel Planner</h3>
+<div class="mtech">Laravel 11 · Neuron AI · OpenRouter</div>
+<p>A personal project with two AI agents working together: a Planner Agent collects the trip details, a Writer Agent writes the itinerary.</p>
+<a href="https://github.com/shailesh10981/ai-travel-planner" rel="noopener" target="_blank">View on GitHub →</a>
+</div>
+<div class="mini">
+<h3>CatchMyGigLive</h3>
+<div class="mtech">Laravel · WebRTC · Node.js · AngularJS</div>
+<p>A live-streaming platform for musicians and event promoters. I worked on the WebRTC streaming, the booking calendar and automatic subdomain setup. (The business has since closed.)</p>
+</div>
 <div class="mini">
 <h3>DemoMail Suite</h3>
 <div class="mtech">PHP · Salesforce · Outlook SDK</div>
-<p>Sends video product demos and tracks them through Salesforce.</p>
+<p>Sends video product demos and tracks them in Salesforce.</p>
 <a href="https://demoondemand.com" rel="noopener" target="_blank">demoondemand.com →</a>
 </div>
 <div class="mini">
 <h3>Brewing Industry ERP</h3>
 <div class="mtech">Laravel · MySQL · React.js</div>
-<p>Inventory, billing, and reporting with separate logins for retailers, distributors, and admins. (Demo on request.)</p>
+<p>Inventory, billing and reports, with separate logins for retailers, distributors and admins. (Demo on request.)</p>
 </div>
 <div class="mini">
 <h3>AI Lead Generation Tool</h3>
-<div class="mtech">Gemini API · Business Data APIs · Automation</div>
-<p>An AI-assisted lead workflow that collects business information from external APIs, uses Gemini to process and summarize the data, and produces structured lead output.</p>
-</div>
-<div class="mini">
-<h3>CatchMyGigLive</h3>
-<div class="mtech">Laravel · WebRTC · Node.js · AngularJS</div>
-<p>A live-streaming platform for musicians and event promoters. I worked on the real-time video streaming (WebRTC), the booking calendar, and subdomain provisioning. (Platform now inactive — the business closed.)</p>
+<div class="mtech">Gemini API · Business Data APIs</div>
+<p>Collects business information from external APIs, uses Gemini to summarise it, and outputs structured lead lists.</p>
 </div>
 <div class="mini">
 <h3>RealAdventures</h3>
 <div class="mtech">Laravel</div>
 <p>A vacation rentals website built on Laravel.</p>
 </div>
-<div class="mini">
-<h3>AI Travel Planner — Learning Project</h3>
-<div class="mtech">Laravel · Neuron AI · OpenRouter · Multi-Agent</div>
-<p>A personal learning project for exploring multi-agent orchestration in the travel domain. A Planner Agent structures trip requirements and a Writer Agent creates the final travel plan.</p>
-<a href="https://github.com/shailesh10981/ai-travel-planner" rel="noopener" target="_blank">View on GitHub →</a></div>
 </div>
 </div>
 </section>
+
 <!-- ============ WORDPRESS ============ -->
 <section>
-<div class="wrap"><div class="sec-head">Earlier Web Experience</div><p class="p-desc">Earlier in my career I built 50+ WordPress and WooCommerce sites for eCommerce and content-driven businesses. Today my primary focus is backend engineering, AI integration and workflow automation.</p></div>
+<div class="wrap">
+<div class="sec-head">WordPress / WooCommerce</div>
+<p class="p-desc">I've built 50+ WordPress and WooCommerce sites for shops and brands. A few that are live:</p>
+<div class="p-tech">
+<a class="site" href="https://kawaiibabydiapers.com" rel="noopener" target="_blank">kawaiibabydiapers.com</a>
+<a class="site" href="https://kamaalzindagi.com" rel="noopener" target="_blank">kamaalzindagi.com</a>
+<a class="site" href="https://tidyboy.de" rel="noopener" target="_blank">tidyboy.de</a>
+<a class="site" href="https://byakuya.com" rel="noopener" target="_blank">byakuya.com</a>
+<a class="site" href="https://rhemamade.com" rel="noopener" target="_blank">rhemamade.com</a>
+</div>
+</div>
 </section>
+
 <!-- ============ SKILLS ============ -->
 <section>
 <div class="wrap">
-<div class="sec-head">What I Work With</div>
+<div class="sec-head">Skills</div>
 <div class="skills">
-<div class="skill-group">
-<h4>AI &amp; Automation</h4>
-<p>n8n, Claude / OpenAI / Gemini APIs, AI agents, tool calling, prompt design, WhatsApp Cloud API, webhooks, RAG / embeddings / vector DB fundamentals</p>
-</div>
-<div class="skill-group">
-<h4>Backend</h4>
-<p>Laravel 11, PHP 8+, REST APIs, CodeIgniter, CakePHP, MySQL, JavaScript</p>
-</div>
-<div class="skill-group">
-<h4>Frontend</h4>
-<p>React.js, Next.js, Tailwind CSS</p>
-</div>
-<div class="skill-group">
-<h4>Servers</h4>
-<p>VPS setup, Docker, Traefik, SSL, AWS EC2/S3, Git/GitHub, CI/CD</p>
-</div>
+<div class="skill-group"><h4>Backend</h4><p>Laravel 11, PHP 8+, REST APIs, Sanctum, JWT, CodeIgniter, CakePHP</p></div>
+<div class="skill-group"><h4>Database</h4><p>MySQL: schema design, indexing, query optimisation</p></div>
+<div class="skill-group"><h4>AI Integration</h4><p>Claude, OpenAI, Gemini, Groq, OpenRouter, multi-LLM routing with failover, AI agents with tool calling, prompt design, conversation memory, structured outputs</p></div>
+<div class="skill-group"><h4>Automation</h4><p>n8n, WhatsApp Cloud API, webhooks, Google Calendar API, Kommo CRM</p></div>
+<div class="skill-group"><h4>Frontend &amp; CMS</h4><p>React.js, JavaScript, Tailwind CSS, Bootstrap, WordPress, WooCommerce</p></div>
+<div class="skill-group"><h4>DevOps &amp; Testing</h4><p>Linux VPS, Docker, Traefik, OpenLiteSpeed/CyberPanel, SSL, AWS EC2/S3, Git/GitHub, CI/CD, Playwright</p></div>
 </div>
 </div>
 </section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
 <div class="wrap">
-<div class="big">Open to AI Integration &amp; Automation Engineering Roles</div>
-<p>Focused on GenAI integration, n8n automation, LLM agents, backend systems and API-driven business workflows.</p>
+<div class="big">Open to AI Engineer and Laravel/PHP roles</div>
+<p>Remote, or happy to relocate anywhere in India or abroad. Can join immediately.</p>
 <div class="contact" style="justify-content:center">
 <a href="mailto:shailesh.me81@gmail.com">Email me</a>
 <a href="https://www.linkedin.com/in/shailesh-fullstack-dev" rel="noopener" target="_blank">LinkedIn</a>
-<a href="https://github.com/shailesh10981" rel="noopener" target="_blank">GitHub</a></div>
+<a href="https://github.com/shailesh10981" rel="noopener" target="_blank">GitHub</a>
+</div>
+<p class="agency-note">Running an agency? <a href="agencies/">See how I work with agencies →</a></p>
 </div>
 </footer>
 </body>
+
 </html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shailesh Kumar Mishra | Developer for Agencies</title>
+<meta name="description" content="White-label Laravel/PHP, WordPress and AI automation development for agencies. 10+ years building CRMs, ERPs, APIs and production AI agents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --bg-soft:#f6f7f9; --ink:#14171c; --ink-2:#4a5260; --ink-3:#7a8290;
+    --line:#e4e7ec; --accent:#1f5eff; --accent-soft:#eaf0ff; --good:#0f8a5f; --card:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1115; --bg-soft:#161920; --ink:#eef0f3; --ink-2:#b4bac4; --ink-3:#8a919c;
+      --line:#262a33; --accent:#6f95ff; --accent-soft:#1a2340; --good:#3ccf97; --card:#14171d;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+
+  /* nav */
+  nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  nav .name{font-weight:700;color:var(--ink)}
+  nav .links{display:flex;gap:22px;font-size:14px}
+  nav .links a{color:var(--ink-2)}
+  @media(max-width:640px){nav .links a:not(.cta-sm){display:none}}
+  .cta-sm{background:var(--ink);color:var(--bg)!important;padding:7px 14px;border-radius:8px;font-weight:600}
+  .cta-sm:hover{text-decoration:none;opacity:.9}
+
+  /* hero */
+  .hero{padding:80px 0 64px}
+  .hero h1{font-size:clamp(32px,5vw,52px);line-height:1.12;letter-spacing:-.02em;max-width:820px;margin:14px 0 20px}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p.lead{font-size:19px;color:var(--ink-2);max-width:680px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+  .btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:600;font-size:15px}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn:hover{text-decoration:none;opacity:.92}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:56px}
+  .facts div{background:var(--bg);padding:20px}
+  .facts b{display:block;font-size:22px;letter-spacing:-.01em}
+  .facts span{color:var(--ink-3);font-size:14px}
+  @media(max-width:640px){.facts{grid-template-columns:1fr}}
+
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  section.soft{background:var(--bg-soft)}
+  h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.015em;margin:10px 0 12px}
+  .sub{color:var(--ink-2);max-width:640px;margin-bottom:36px}
+
+  /* services */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px}
+  .card h3{font-size:17px;margin-bottom:8px}
+  .card p{color:var(--ink-2);font-size:15px}
+  .card.team{margin-top:16px;border-style:dashed}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .tags span{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+
+  /* work */
+  .work{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
+  .work:last-of-type{border-bottom:0}
+  .work img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+  .work.noimg{grid-template-columns:1fr}
+  @media(max-width:760px){.work{grid-template-columns:1fr}}
+  .work h3{font-size:20px;margin:6px 0 8px}
+  .work p{color:var(--ink-2)}
+  .work ul{margin:12px 0 0 18px;color:var(--ink-2);font-size:15px}
+  .work li{margin-bottom:4px}
+  .live{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--good)}
+  .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--good)}
+  .sites{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .sites a{font-size:14px;border:1px solid var(--line);padding:5px 11px;border-radius:8px;color:var(--ink-2)}
+
+  /* how */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+  @media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{counter-increment:s;border-top:2px solid var(--ink);padding-top:14px}
+  .step::before{content:"0" counter(s);font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--ink-3)}
+  .step h3{font-size:16px;margin:6px 0}
+  .step p{font-size:14px;color:var(--ink-2)}
+  .points{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  @media(max-width:760px){.points{grid-template-columns:1fr}}
+  .points div{font-size:15px;color:var(--ink-2)}
+  .points b{display:block;color:var(--ink);margin-bottom:4px}
+
+  /* contact */
+  .contact{text-align:center;padding:88px 0}
+  .contact h2{margin-bottom:12px}
+  .contact .sub{margin:0 auto 30px}
+  .contact .btns{justify-content:center}
+  .contact .alt{margin-top:22px;font-size:14px;color:var(--ink-3)}
+  footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--ink-3)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="name">Shailesh Kumar Mishra</span>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#how">How I work</a>
+      <a href="#contact" class="cta-sm">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="mono">For agencies</div>
+    <h1>Need an extra developer for <em>Laravel, WordPress or AI work</em>? I can help.</h1>
+    <p class="lead">I've been building with Laravel and PHP for over 10 years. I work with agencies on projects they don't have the time or the right people for. You keep the client, I do the build.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:shailesh.mishraa63@gmail.com?subject=Development%20help%20for%20our%20agency">Email me</a>
+      <a class="btn ghost" href="#work">See my work</a>
+    </div>
+    <div class="facts">
+      <div><b>10+ years</b><span>Laravel and PHP</span></div>
+      <div><b>50+ sites</b><span>WordPress and WooCommerce</span></div>
+      <div><b>1 AI agent live</b><span>Running for a client in Mexico</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="services" class="soft">
+  <div class="wrap">
+    <div class="mono">What I can take on</div>
+    <h2>What I can do for you</h2>
+    <p class="sub">A single feature, a full build, or ongoing fixes on a client site.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Laravel and React apps</h3>
+        <p>Custom web apps, CRMs, ERPs, admin panels and REST APIs, with a React.js front end. I can start a new project or pick up an existing codebase.</p>
+        <div class="tags"><span>Laravel 11</span><span>PHP 8+</span><span>React.js</span><span>MySQL</span></div>
+      </div>
+      <div class="card">
+        <h3>AI features and automation</h3>
+        <p>WhatsApp AI agents, chatbots, and AI added to apps your clients already use. Also n8n workflows to connect their tools.</p>
+        <div class="tags"><span>Claude</span><span>OpenAI</span><span>Gemini</span><span>n8n</span><span>WhatsApp Cloud API</span></div>
+      </div>
+      <div class="card">
+        <h3>WordPress and WooCommerce</h3>
+        <p>New store and brand sites, custom features, and fixes on sites your clients already have.</p>
+        <div class="tags"><span>WordPress</span><span>WooCommerce</span></div>
+      </div>
+      <div class="card">
+        <h3>Integrations and servers</h3>
+        <p>Connecting apps to CRMs and other services through APIs and webhooks. Deployment on a VPS or AWS.</p>
+        <div class="tags"><span>REST APIs</span><span>Webhooks</span><span>Docker</span><span>AWS EC2/S3</span></div>
+      </div>
+    </div>
+    <div class="card team">
+      <h3>Next.js, Python and RAG projects, with my team</h3>
+      <p>For Next.js, Python and RAG work, I team up with a few developers I trust. I stay your single point of contact, manage the work and review the code before it reaches you.</p>
+      <div class="tags"><span>Next.js</span><span>Python</span><span>RAG</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="mono">Selected work</div>
+    <h2>Some of my work</h2>
+    <p class="sub">Most of these are live, so you can open them and check.</p>
+
+    <div class="work">
+      <img src="../images/bauzen-chat.png" alt="WhatsApp AI agent chat" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')">
+      <div>
+        <span class="live">Live, client project</span>
+        <h3>WhatsApp AI agent for a real-estate company in Mexico</h3>
+        <p>Customers message the company on WhatsApp. The agent replies, finds matching properties and books a site visit.</p>
+        <ul>
+          <li>Talks in Spanish or English, whichever the customer uses</li>
+          <li>Searches their live property listings and checks free calendar slots</li>
+          <li>Finds the lead in Kommo CRM by phone number, then updates it or creates a new one</li>
+          <li>Knows when a customer came from a Facebook or Instagram ad</li>
+        </ul>
+        <div class="tags"><span>n8n</span><span>Claude via OpenRouter</span><span>WhatsApp Cloud API</span><span>Google Calendar</span><span>Kommo CRM</span></div>
+      </div>
+    </div>
+
+    <div class="work noimg">
+      <div>
+        <span class="live">Live</span> · <a href="https://tutor.eduforge.in" target="_blank" rel="noopener">tutor.eduforge.in</a>
+        <h3>AI Tutor (my own product, built alone)</h3>
+        <p>A tutor for CBSE Class 8–12 Maths and Science. It talks, writes notes and draws diagrams on a whiteboard, asks questions and answers doubts.</p>
+        <ul>
+          <li>Uses Gemini, Groq and Claude. If one fails, it moves to the next. Daily spend limits keep costs close to zero</li>
+          <li>Diagrams come from my own SVG templates (about 16 for physics and maths), not AI images, so they're always correct</li>
+          <li>Numeric and maths answers are checked with a small Python/SymPy service, not by asking the AI</li>
+          <li>Admin panel for content and analytics, Playwright tests, runs on my own VPS</li>
+        </ul>
+        <div class="tags"><span>PHP 8.2</span><span>MySQL</span><span>JavaScript</span><span>Python/SymPy</span><span>Playwright</span></div>
+      </div>
+    </div>
+
+    <div class="work">
+      <img src="../images/crediflex.png" alt="Loan CRM dashboard" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')">
+      <div>
+        <span class="live">Live</span> · <a href="https://app.crediflex.in" target="_blank" rel="noopener">app.crediflex.in</a>
+        <h3>Loan CRM</h3>
+        <p>Follows each loan lead from the first enquiry to disbursement: lead capture, document checks, credit processing, approval and payout.</p>
+        <ul>
+          <li>Leads are assigned to agents</li>
+          <li>Admins see how many leads move through each stage</li>
+        </ul>
+        <div class="tags"><span>Laravel</span><span>React.js</span><span>MySQL</span><span>REST API</span></div>
+      </div>
+    </div>
+
+    <div class="work">
+      <img src="../images/eduforge.png" alt="School ERP screen" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')">
+      <div>
+        <span class="live">Live</span> · <a href="https://eduforge.in" target="_blank" rel="noopener">eduforge.in</a>
+        <h3>School ERP</h3>
+        <p>Runs the day-to-day of a school: admissions, attendance, fees, timetable, exams and results.</p>
+        <ul>
+          <li>Separate logins for admins, teachers and parents, each seeing only what they need</li>
+        </ul>
+        <div class="tags"><span>Laravel</span><span>React.js</span><span>MySQL</span><span>REST API</span></div>
+      </div>
+    </div>
+
+    <div class="work noimg">
+      <div>
+        <h3>50+ WordPress and WooCommerce sites</h3>
+        <p>Online shops and brand websites. A few you can visit:</p>
+        <div class="sites">
+          <a href="https://kawaiibabydiapers.com" target="_blank" rel="noopener">kawaiibabydiapers.com</a>
+          <a href="https://kamaalzindagi.com" target="_blank" rel="noopener">kamaalzindagi.com</a>
+          <a href="https://tidyboy.de" target="_blank" rel="noopener">tidyboy.de</a>
+          <a href="https://byakuya.com" target="_blank" rel="noopener">byakuya.com</a>
+          <a href="https://rhemamade.com" target="_blank" rel="noopener">rhemamade.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="soft">
+  <div class="wrap">
+    <div class="mono">How I work with agencies</div>
+    <h2>How we'd work together</h2>
+    <p class="sub">Your client talks to you. I stay in the background and do the work.</p>
+    <div class="steps">
+      <div class="step"><h3>You send the brief</h3><p>Scope, designs or the existing code. I'll ask questions before I quote.</p></div>
+      <div class="step"><h3>I give a quote</h3><p>A fixed price if the scope is clear, or hourly if it's open-ended.</p></div>
+      <div class="step"><h3>I build it</h3><p>You get regular updates on Slack, Trello, GitHub or Zoom, whichever you use.</p></div>
+      <div class="step"><h3>Handover</h3><p>Code goes into your repo. I help with deployment and stay around for support after launch.</p></div>
+    </div>
+    <div class="points">
+      <div><b>Your brand, not mine</b>I never contact your clients. Happy to sign an NDA.</div>
+      <div><b>Based in India</b>IST (UTC+5:30). We agree on working hours per project.</div>
+      <div><b>Clear English</b>Written and spoken. You won't have to chase me for updates.</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Got something I can help with?</h2>
+    <p class="sub">Send me a short note about the project. I'll tell you honestly if it's a good fit.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:shailesh.mishraa63@gmail.com?subject=Development%20help%20for%20our%20agency">shailesh.mishraa63@gmail.com</a>
+      <a class="btn ghost" href="https://wa.me/919911127915" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p class="alt"><a href="https://www.linkedin.com/in/shailesh-fullstack-dev" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/shailesh10981" target="_blank" rel="noopener">GitHub</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Shailesh Kumar Mishra</span>
+    <span>Laravel · WordPress · AI for agencies</span>
+  </div>
+</footer>
+
+</body>
+</html>
